@@ -1,8 +1,9 @@
-# MyNodeServer
+# Pikes Peak Indoor Air Quality (IAQ)
 
-Template to provide an example of how a node server is written for Polyglot
-version 3. The goal is to provide some concrete examples of the required
-implementations and some best known practices for developing node servers.
+This repo is based on a UDI template to provide an example of how a node 
+server is written for Polyglot version 3. The goal is to provide some 
+concrete examples of the required implementations and some best known 
+practices for developing node servers.
 
 You will need to be familiar with the udi_interface module API at 
 https://github.com/UniversalDevicesInc/udi_python_interface
