@@ -1,16 +1,16 @@
 {
-	"name": "PythonTemplate",
-	"docs": "https://github.com/UniversalDevicesInc/udi-poly-template-python",
+	"name": "Pikes Peak Fresh Air Automation",
+	"docs": "https://github.com/donovanclay/Pikes-Peak-Fresh-Air-Automation/README.md",
 	"type": "python3",
-	"executable": "template-poly.py",
+	"executable": "main.py",
 	"install": "install.sh",
-	"description": "Template Node Server",
-	"notice": "Your disclaimer here",
+	"description": "Controller for Indoor Air Quality",
+	"notice": "Not really built for flexibility.",
 	"shortPoll": "120",
 	"longPoll": "240",
 	"testMode": false,
 	"logLevel": "DEBUG",
-	"profile_version": "3.0.0",
+	"profile_version": "0.0.1",
 	"customParams": {
 		"user": "",
 		"password": "my secret password",
@@ -21,15 +21,15 @@
 	"credits": [
 		{
 			"title": "mypoly: a NodeServer for Template Integration",
-			"author": "James Milne (Einstein.42)",
-			"version": "3.0.0",
-			"date": "January 14, 2021",
-			"source": "https://github.com/UniversalDevicesInc/udi-poly-template-python",
-			"license": "https://github.com/UniversalDevicesInc/udi-poly-template-python/LICENSE"
+			"author": "Donovan Clay",
+			"version": "0.0.1",
+			"date": "September 12, 2021",
+			"source": "https://github.com/donovanclay/Pikes-Peak-Fresh-Air-Automation",
+			"license": "https://github.com/donovanclay/Pikes-Peak-Fresh-Air-Automation/LICENSE"
 		}
 	],
 	"store": {
-		"developer": "milne.james@gmail.com",
+		"developer": "donovan@donovanclay.com",
 		"purchaseOptions": [
 			{
 				"isPerpetual": true,
