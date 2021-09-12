@@ -41,7 +41,7 @@ if __name__ == "__main__":
         * use 'controller' for both parent and address and PG3 will be able
           to automatically update node server status
         """
-        control = TemplateController(polyglot, 'controller', 'controller', 'PythonTemplate')
+        control = TemplateController(polyglot, 'controller', 'controller', 'Pikes Peak Nodeserver Controller')
 
         """
         Sits around and does nothing forever, keeping your program running.
