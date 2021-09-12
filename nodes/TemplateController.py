@@ -64,7 +64,7 @@ class TemplateController(udi_interface.Node):
         """
         super(TemplateController, self).__init__(polyglot, primary, address, name)
         self.poly = polyglot
-        self.name = 'Template Controller'  # override what was passed in
+        self.name = name 
         self.hb = 0
 
         # Create data storage classes to hold specific data that we need
@@ -226,12 +226,14 @@ class TemplateController(udi_interface.Node):
         example controller start method and from DISCOVER command recieved
         from ISY as an exmaple.
         """
-        self.poly.addNode(TemplateNode(self.poly, self.address, 'templateaddr', 'Template Node Name'))
+        # TODO: remove when done
+        # self.poly.addNode(TemplateNode(self.poly, self.address, 'templateaddr', 'Template Node Name'))
+        self.poly.addNode(IAQNode(self.poly, self.address, 'IAQaddr', 'IAQ Manager'))
 
     def delete(self):
         """
         Example
-        This is call3ed by Polyglot upon deletion of the NodeServer. If the
+        This is called by Polyglot upon deletion of the NodeServer. If the
         process is co-resident and controlled by Polyglot, it will be
         terminiated within 5 seconds of receiving this message.
         """
