@@ -226,9 +226,12 @@ class TemplateController(udi_interface.Node):
         example controller start method and from DISCOVER command recieved
         from ISY as an exmaple.
         """
+
         # TODO: remove when done
         # self.poly.addNode(TemplateNode(self.poly, self.address, 'templateaddr', 'Template Node Name'))
+        
         self.poly.addNode(IAQNode(self.poly, self.address, 'IAQaddr', 'IAQ Manager'))
+        LOGGER.info('NODE IS MADE {}'.format(level))
 
     def delete(self):
         """
