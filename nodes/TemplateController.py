@@ -7,7 +7,7 @@ a different Python module which doesn't have the new LOG_HANDLER functionality
 import udi_interface
 
 # My Template Node
-from nodes import TemplateNode
+from nodes import IAQNode
 
 """
 Some shortcuts for udi interface components
