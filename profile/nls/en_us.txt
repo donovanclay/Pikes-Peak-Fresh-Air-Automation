@@ -1,6 +1,6 @@
 
 # controller
-ND-controller-NAME = Template NodeServer Controller
+ND-controller-NAME = Pikes Peak NodeServer Controller
 CMD-ctl-QUERY-NAME = Query
 CMD-ctl-DISCOVER-NAME = Re-Discover
 CMD-ctl-UPDATE_PROFILE-NAME = Update Profile
