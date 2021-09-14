@@ -232,8 +232,8 @@ class TemplateController(udi_interface.Node):
         LOGGER.debug('Attempting to add node...')
         self.poly.addNode(TemplateNode(self.poly, self.address, 'templateaddr', 'Template Node Name'))
         
-        # self.poly.addNode(IAQNode(self.poly, self.address, 'IAQaddr', 'IAQ Manager'))
-        
+        self.poly.addNode(IAQNode(self.poly, self.address, 'IAQaddr', 'IAQ Manager'))
+
     def delete(self):
         """
         Example
