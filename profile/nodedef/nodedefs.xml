@@ -35,7 +35,7 @@
             </accepts>
         </cmds>
     </nodeDef>
-    <nodeDef id="IAQNodeid" nls="IAQNode">
+    <nodeDef id="IAQNodeid" nodeType="140" nls="IAQNode">
         <editors />
         <sts>
             <st id="ST" editor="bool" />
