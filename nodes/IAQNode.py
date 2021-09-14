@@ -117,16 +117,6 @@ class IAQNode(udi_interface.Node):
                 self.setDriver('ST',1)
             LOGGER.debug('%s: get ST=%s',self.lpfx,self.getDriver('ST'))
 
-    """
-    This is a dictionary of commands. If ISY sends a command to the NodeServer,
-    this tells it which method to call. DON calls setOn, etc.
-    """
-    commands = {
-        'DON': cmd_on,
-        'DOF': cmd_off,
-        'PING': cmd_ping
-    }
-
 
     def cmd_on(self, command):
         """
@@ -152,6 +142,16 @@ class IAQNode(udi_interface.Node):
         LOGGER.debug("cmd_ping:")
         r = self.http.request('GET',"google.com")
         LOGGER.debug("cmd_ping: r={}".format(r))
+
+    """
+    This is a dictionary of commands. If ISY sends a command to the NodeServer,
+    this tells it which method to call. DON calls setOn, etc.
+    """
+    commands = {
+        'DON': cmd_on,
+        'DOF': cmd_off,
+        'PING': cmd_ping
+    }
 
 
     def query(self,command=None):
