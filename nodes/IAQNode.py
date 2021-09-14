@@ -86,7 +86,7 @@ class IAQNode(udi_interface.Node):
             if int(self.getDriver('ST')) == 1:
                 self.setDriver('ST',0)
             else:
-                self.setDriver('GV1'=2000)
+                self.setDriver('GV1',2000)
                 self.setDriver('ST',1)
             LOGGER.debug('%s: get ST=%s',self.lpfx,self.getDriver('ST'))
 
