@@ -9,4 +9,16 @@
     <editor id="GV0" editor="CFM_Total_Exhaust">
       <range uom="7" min="0" max="2500" step="25"/>
     </editor>
+    <editor id="GV1" editor="CFM_Total_MakeUpAir">
+      <range uom="7" min="0" max="2500" step="25"/>
+    </editor>
+        <editor id="GV2" editor="12_in_Fan_Percent">
+      <range uom="51" min="0" max="100" step="1"/>
+    </editor>
+        <editor id="GV3" editor="8_in_Fan_Percent">
+      <range uom="51" min="0" max="100" step="1"/>
+    </editor>
+        <editor id="GV4" editor="8_in_Damper">
+      <range uom="2" subset="0,1"/>
+    </editor>
 </editors>
