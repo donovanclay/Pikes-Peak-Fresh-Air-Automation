@@ -39,11 +39,11 @@
         <editors />
         <sts>
             <st id="ST" editor="bool" />
-            <st id="GV0" editor="CFM_Total_Exhaust" />
-            <st id="GV1" editor="CFM_Total_MakeUpAir" />
-            <st id="GV2" editor="12_in_Fan_Percent" />
-            <st id="GV3" editor="8_in_Fan_Percent" />
-            <st id="GV4" editor="8_in_Damper" />
+            <st id="GV0" editor="CFM" />
+            <st id="GV1" editor="CFM" />
+            <st id="GV2" editor="Fan_Percent" />
+            <st id="GV3" editor="Fan_Percent" />
+            <st id="GV4" editor="bool" />
         </sts>
         <cmds>
             <sends />
