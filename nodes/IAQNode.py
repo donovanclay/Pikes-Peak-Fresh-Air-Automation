@@ -124,7 +124,14 @@ class IAQNode(udi_interface.Node):
     of variable to display. Check the UOM's in the WSDK for a complete list.
     UOM 2 is boolean so the ISY will display 'True/False'
     """
-    drivers = [{'driver': 'ST', 'value': 0, 'uom': 2}]
+    drivers = [
+        {'driver': 'ST', 'value': 0, 'uom': 2},
+        {'driver': 'GV0', 'value': 0, 'uom': '7'},  # Total Exhaust CFM
+        {'driver': 'GV1', 'value': 0, 'uom': '7'},  # Total Makeup Air CFM
+        {'driver': 'GV2', 'value': 0, 'uom': '51'},  # 12in Fan Dimming Percent
+        {'driver': 'GV3', 'value': 0, 'uom': '51'},  # 8in Fan Dimmming Percent
+        {'driver': 'GV4', 'value': int(False), 'uom': '2'},  # 8in Fan Damper Open/Closed
+    ]
 
     """
     id of the node from the nodedefs.xml that is in the profile.zip. This tells
