@@ -1,6 +1,7 @@
 
 # controller
-ND-controller-NAME = Pikes Peak NodeServer Controller
+ND-controller-NAME = Pikes Peak Controller
+ND-controller-ICON = Output
 CMD-ctl-QUERY-NAME = Query
 CMD-ctl-DISCOVER-NAME = Re-Discover
 CMD-ctl-UPDATE_PROFILE-NAME = Update Profile
@@ -21,3 +22,12 @@ CDM-50 = Critical
 ND-templatenodeid-NAME = Template Node
 ST-tmplnode-ST-NAME = Node Status
 CMD-tmplnode-PING-NAME = Ping
+
+ND-IAQNodeid-NAME = IAQ Manager
+ST-IAQNode-ST-NAME = NodeServer Online
+ST-IAQNode-GV0-NAME = Total Exhaust CFM
+ST-IAQNode-GV1-NAME = Total MakeUp Air CFM
+ST-IAQNode-GV2-NAME = 12 in Fan Percent
+ST-IAQNode-GV3-NAME = 8 in Fan Percent
+ST-IAQNode-GV4-NAME = 8 in Fan Damper
+CMD-IAQNode-DISCOVER-NAME = Re-Discover
