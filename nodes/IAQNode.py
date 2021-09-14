@@ -28,6 +28,29 @@ class IAQNode(udi_interface.Node):
     query(): Called when ISY sends a query request to Polyglot for this
         specific node
     """
+
+    """
+    id of the node from the nodedefs.xml that is in the profile.zip. This tells
+    the ISY what fields and commands this node has.
+    """
+    id = 'IAQNodeid'
+
+    """
+    Optional.
+    This is an array of dictionary items containing the variable names(drivers)
+    values and uoms(units of measure) from ISY. This is how ISY knows what kind
+    of variable to display. Check the UOM's in the WSDK for a complete list.
+    UOM 2 is boolean so the ISY will display 'True/False'
+    """
+    drivers = [
+        {'driver': 'ST', 'value': 0, 'uom': 2},
+        {'driver': 'GV0', 'value': 0, 'uom': '7'},  # Total Exhaust CFM
+        {'driver': 'GV1', 'value': 0, 'uom': '7'},  # Total Makeup Air CFM
+        {'driver': 'GV2', 'value': 0, 'uom': '51'},  # 12in Fan Dimming Percent
+        {'driver': 'GV3', 'value': 0, 'uom': '51'},  # 8in Fan Dimmming Percent
+        {'driver': 'GV4', 'value': int(False), 'uom': '2'},  # 8in Fan Damper Open/Closed
+    ]
+
     def __init__(self, polyglot, primary, address, name):
         """
         Optional.
@@ -45,6 +68,11 @@ class IAQNode(udi_interface.Node):
 
         self.poly.subscribe(self.poly.START, self.start, address)
         self.poly.subscribe(self.poly.POLL, self.poll)
+
+        self.Exhaust_CFM = 45
+        self.Makeup_CFM = 55
+
+        self.reportDrivers()
 
     def start(self):
         """
@@ -76,19 +104,29 @@ class IAQNode(udi_interface.Node):
     '''
     FROM EXAMPLE 2: "This is where the real work happens."  
     '''
-    def poll(self, polltype):
-
         if 'longPoll' in polltype:
             LOGGER.debug('longPoll (node)')
+            self.setDriver('GV0',self.Exhaust_CFM, True, True)
         else:
             LOGGER.debug('shortPoll (node)')
-            self.setDriver('GV0',1000)
+            self.setDriver('GV1',self.Makeup_CFM, True, True)
             if int(self.getDriver('ST')) == 1:
                 self.setDriver('ST',0)
             else:
-                self.setDriver('GV1',2000)
                 self.setDriver('ST',1)
             LOGGER.debug('%s: get ST=%s',self.lpfx,self.getDriver('ST'))
+
+
+    """
+    This is a dictionary of commands. If ISY sends a command to the NodeServer,
+    this tells it which method to call. DON calls setOn, etc.
+    """
+    commands = {
+        'DON': cmd_on,
+        'DOF': cmd_off,
+        'PING': cmd_ping
+    }
+
 
     def cmd_on(self, command):
         """
@@ -124,34 +162,7 @@ class IAQNode(udi_interface.Node):
         """
         self.reportDrivers()
 
-    """
-    Optional.
-    This is an array of dictionary items containing the variable names(drivers)
-    values and uoms(units of measure) from ISY. This is how ISY knows what kind
-    of variable to display. Check the UOM's in the WSDK for a complete list.
-    UOM 2 is boolean so the ISY will display 'True/False'
-    """
-    drivers = [
-        {'driver': 'ST', 'value': 0, 'uom': 2},
-        {'driver': 'GV0', 'value': 0, 'uom': '7'},  # Total Exhaust CFM
-        {'driver': 'GV1', 'value': 0, 'uom': '7'},  # Total Makeup Air CFM
-        {'driver': 'GV2', 'value': 0, 'uom': '51'},  # 12in Fan Dimming Percent
-        {'driver': 'GV3', 'value': 0, 'uom': '51'},  # 8in Fan Dimmming Percent
-        {'driver': 'GV4', 'value': int(False), 'uom': '2'},  # 8in Fan Damper Open/Closed
-    ]
 
-    """
-    id of the node from the nodedefs.xml that is in the profile.zip. This tells
-    the ISY what fields and commands this node has.
-    """
-    id = 'IAQNodeid'
 
-    """
-    This is a dictionary of commands. If ISY sends a command to the NodeServer,
-    this tells it which method to call. DON calls setOn, etc.
-    """
-    commands = {
-                    'DON': cmd_on,
-                    'DOF': cmd_off,
-                    'PING': cmd_ping
-                }
+   
+
