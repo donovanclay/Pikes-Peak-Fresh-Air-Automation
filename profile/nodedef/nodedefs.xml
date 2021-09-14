@@ -25,7 +25,25 @@
         <editors />
         <sts>
             <st id="ST" editor="bool" />
-            <st id="GV0" editor="Exhaust CFM" />
+        </sts>
+        <cmds>
+            <sends />
+            <accepts>
+                <cmd id="DON" />
+                <cmd id="DOF" />
+                <cmd id="PING" />
+            </accepts>
+        </cmds>
+    </nodeDef>
+    <nodeDef id="IAQNodeid" nls="IAQNode">
+        <editors />
+        <sts>
+            <st id="ST" editor="bool" />
+            <st id="GV0" editor="CFM_Total_Exhaust" />
+            <st id="GV1" editor="CFM_Total_MakeUpAir" />
+            <st id="GV2" editor="12_in_Fan_Percent" />
+            <st id="GV3" editor="8_in_Fan_Percent" />
+            <st id="GV4" editor="8_in_Damper" />
         </sts>
         <cmds>
             <sends />
