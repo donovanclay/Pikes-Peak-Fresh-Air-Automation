@@ -228,9 +228,10 @@ class TemplateController(udi_interface.Node):
         """
 
         # TODO: remove when done
-        # self.poly.addNode(TemplateNode(self.poly, self.address, 'templateaddr', 'Template Node Name'))
+        LOGGER.debug('Attempting to add node...')
+        self.poly.addNode(TemplateNode(self.poly, self.address, 'templateaddr', 'Template Node Name'))
         
-        self.poly.addNode(IAQNode(self.poly, self.address, 'IAQaddr', 'IAQ Manager'))
+        # self.poly.addNode(IAQNode(self.poly, self.address, 'IAQaddr', 'IAQ Manager'))
         LOGGER.info('NODE IS MADE {}'.format(level))
 
     def delete(self):
