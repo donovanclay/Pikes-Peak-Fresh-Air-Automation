@@ -8,6 +8,7 @@ import udi_interface
 
 # My Template Node
 from nodes import IAQNode
+from nodes import TemplateNode
 
 """
 Some shortcuts for udi interface components
