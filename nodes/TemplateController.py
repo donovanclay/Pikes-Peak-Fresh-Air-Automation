@@ -8,7 +8,7 @@ import udi_interface
 
 # My Template Node
 from nodes import IAQNode
-from nodes import TemplateNode
+#from nodes import TemplateNode  #Disable the template node
 
 """
 Some shortcuts for udi interface components
@@ -272,8 +272,9 @@ class TemplateController(udi_interface.Node):
         logging.getLogger('urllib3').setLevel(level)
 
     def check_params(self):
+        self.Notices['hello2'] = 'Donovan has the best barber!'
         """
-        # Everything below is an example if using custom Params for user and password and an example with a Dictionary
+        # Everything below is an example of using custom Params for user and password and an example with a Dictionary
         
         self.Notices.clear()
         # self.Notices['hello'] = 'Hey there, my IP is {}'.format(self.poly.network_interface['addr'])
@@ -302,7 +303,7 @@ class TemplateController(udi_interface.Node):
         # It may be better to do this during __init__() 
         """
 
-        
+        """
         # This is a simpler way to make boxes for custom parameters without the error handling.
         self.TypedParameters.load( [
                 {
@@ -327,8 +328,8 @@ class TemplateController(udi_interface.Node):
             ],
             True
         )
-
-        '''
+        """
+        """
         self.TypedParameters.load( [
                 {
                     'name': 'item',
@@ -387,7 +388,7 @@ class TemplateController(udi_interface.Node):
                     ]
                 },
             ], True)
-        '''
+        """
 
     def remove_notice_test(self,command):
         LOGGER.info('remove_notice_test: notices={}'.format(self.Notices))
