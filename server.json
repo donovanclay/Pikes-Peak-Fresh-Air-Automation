@@ -6,8 +6,8 @@
 	"install": "install.sh",
 	"description": "Controller for Indoor Air Quality",
 	"notice": "Not really built for flexibility.",
-	"shortPoll": "120",
-	"longPoll": "240",
+	"shortPoll": "60",
+	"longPoll": "120",
 	"testMode": false,
 	"logLevel": "DEBUG",
 	"profile_version": "0.0.1",
@@ -20,10 +20,10 @@
 	},
 	"credits": [
 		{
-			"title": "mypoly: a NodeServer for Template Integration",
+			"title": "A Nodeserver for IAQ Control",
 			"author": "Donovan Clay",
 			"version": "0.0.3",
-			"date": "September 12, 2021",
+			"date": "September 13, 2021",
 			"source": "https://github.com/donovanclay/Pikes-Peak-Fresh-Air-Automation",
 			"license": "https://github.com/donovanclay/Pikes-Peak-Fresh-Air-Automation/LICENSE"
 		}
