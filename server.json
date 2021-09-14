@@ -12,11 +12,7 @@
 	"logLevel": "DEBUG",
 	"profile_version": "0.0.1",
 	"customParams": {
-		"user": "",
-		"password": "my secret password",
-		"type": "TheType",
-        "host": "host_or_IP",
-        "port": "port_number"
+		"CFM": "CFM Increment",
 	},
 	"credits": [
 		{
