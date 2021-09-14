@@ -66,7 +66,7 @@ class TemplateController(udi_interface.Node):
         super(TemplateController, self).__init__(polyglot, primary, address, name)
         self.poly = polyglot
         self.name = name 
-        self.hb = 0
+        # self.hb = 0
 
         # Create data storage classes to hold specific data that we need
         # to interact with.  
@@ -256,6 +256,8 @@ class TemplateController(udi_interface.Node):
     the ISY.  Programs on the ISY can then monitor this and take action
     when the heartbeat fails to update.
     """
+
+    """
     def heartbeat(self,init=False):
         LOGGER.debug('heartbeat: init={}'.format(init))
         if init is not False:
@@ -267,6 +269,7 @@ class TemplateController(udi_interface.Node):
         else:
             self.reportCmd("DOF",2)
             self.hb = 0
+    """
 
     def set_module_logs(self,level):
         logging.getLogger('urllib3').setLevel(level)
