@@ -302,7 +302,7 @@ class TemplateController(udi_interface.Node):
         # It may be better to do this during __init__() 
         """
 
-        """
+        
         # This is a simpler way to make boxes for custom parameters without the error handling.
         self.TypedParameters.load( [
                 {
@@ -387,7 +387,7 @@ class TemplateController(udi_interface.Node):
                     ]
                 },
             ], True)
-            '''
+        '''
 
     def remove_notice_test(self,command):
         LOGGER.info('remove_notice_test: notices={}'.format(self.Notices))
