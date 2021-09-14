@@ -91,7 +91,7 @@ class IAQNode(udi_interface.Node):
         LOGGER.debug('%s: get ST=%s',self.lpfx,self.getDriver('ST'))
         self.http = urllib3.PoolManager()
 
-    def poll(self, polltype):
+    #def poll(self, polltype):
         """
         This method is called at the poll intervals per the POLL event
         subscription during init.
@@ -104,6 +104,7 @@ class IAQNode(udi_interface.Node):
     '''
     FROM EXAMPLE 2: "This is where the real work happens."  
     '''
+    def poll(self, polltype):
         if 'longPoll' in polltype:
             LOGGER.debug('longPoll (node)')
             self.setDriver('GV0',self.Exhaust_CFM, True, True)
@@ -115,7 +116,6 @@ class IAQNode(udi_interface.Node):
             else:
                 self.setDriver('ST',1)
             LOGGER.debug('%s: get ST=%s',self.lpfx,self.getDriver('ST'))
-
 
     """
     This is a dictionary of commands. If ISY sends a command to the NodeServer,
