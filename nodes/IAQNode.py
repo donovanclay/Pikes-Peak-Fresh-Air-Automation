@@ -73,13 +73,20 @@ class IAQNode(udi_interface.Node):
         # response = self.isy.cmd('nodes/3F.AF.D2/query')
         # LOGGER.info(f'Got response from ISY for powder room: {response}')
 
+    '''
+    FROM EXAMPLE 2: "This is where the real work happens."  
+    '''
+    def poll(self, polltype):
+
         if 'longPoll' in polltype:
             LOGGER.debug('longPoll (node)')
         else:
             LOGGER.debug('shortPoll (node)')
+            self.setDriver('GV0',1000)
             if int(self.getDriver('ST')) == 1:
                 self.setDriver('ST',0)
             else:
+                self.setDriver('GV1'=2000)
                 self.setDriver('ST',1)
             LOGGER.debug('%s: get ST=%s',self.lpfx,self.getDriver('ST'))
 
