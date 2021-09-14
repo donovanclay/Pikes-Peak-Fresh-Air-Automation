@@ -70,8 +70,8 @@ class IAQNode(udi_interface.Node):
         """
 
         # TODO: check if address is correct
-        response = self.isy.cmd('nodes/3F.AF.D2/query')
-        LOGGER.info(f'Got response from ISY for powder room: {response}')
+        # response = self.isy.cmd('nodes/3F.AF.D2/query')
+        # LOGGER.info(f'Got response from ISY for powder room: {response}')
 
         if 'longPoll' in polltype:
             LOGGER.debug('longPoll (node)')
