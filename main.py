@@ -42,6 +42,9 @@ if __name__ == "__main__":
           to automatically update node server status
         """
         control = TemplateController(polyglot, 'controller', 'controller', 'Pikes Peak Controller')
+        
+        # This is how example2 starts the node.
+        # IAQNode.TemplplateController(polyglot, 'controller', 'controller', 'Pikes Peak Controller')
 
         """
         Sits around and does nothing forever, keeping your program running.
