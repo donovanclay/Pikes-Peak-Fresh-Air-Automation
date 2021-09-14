@@ -6,4 +6,7 @@
     <editor id="I_DEBUG">
       <range uom="25" subset="9,10,20,30,40,50" nls="CDM"/>
     </editor>
+    <editor id="GV0" editor="CFM_Total_Exhaust">
+      <range uom="7" min="0" max="2500" step="25"/>
+    </editor>
 </editors>
