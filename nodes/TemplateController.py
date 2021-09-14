@@ -273,11 +273,11 @@ class TemplateController(udi_interface.Node):
 
     def check_params(self):
         """
-        This is an example if using custom Params for user and password and an example with a Dictionary
-        """
+        # Everything below is an example if using custom Params for user and password and an example with a Dictionary
+        
         self.Notices.clear()
-        self.Notices['hello'] = 'Hey there, my IP is {}'.format(self.poly.network_interface['addr'])
-        self.Notices['hello2'] = 'Hello Friends!'
+        # self.Notices['hello'] = 'Hey there, my IP is {}'.format(self.poly.network_interface['addr'])
+        self.Notices['hello2'] = 'Donovan has the best barber!'
         default_user = "YourUserName"
         default_password = "YourPassword"
 
@@ -300,8 +300,10 @@ class TemplateController(udi_interface.Node):
 
         # Typed Parameters allow for more complex parameter entries.
         # It may be better to do this during __init__() 
+        """
 
-        # Lets try a simpler thing here
+        """
+        # This is a simpler way to make boxes for custom parameters without the error handling.
         self.TypedParameters.load( [
                 {
                     'name': 'template_test',
