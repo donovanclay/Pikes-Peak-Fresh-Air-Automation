@@ -46,8 +46,6 @@ class IAQNode(udi_interface.Node):
         self.poly.subscribe(self.poly.START, self.start, address)
         self.poly.subscribe(self.poly.POLL, self.poll)
 
-        # self.isy = udi_interface.ISY()
-
     def start(self):
         """
         Optional.
