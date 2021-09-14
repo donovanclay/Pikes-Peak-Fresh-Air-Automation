@@ -12,7 +12,7 @@
 	"logLevel": "DEBUG",
 	"profile_version": "0.0.1",
 	"customParams": {
-		"CFM": "CFM Increment",
+		"CFM": "CFM Increment"
 	},
 	"credits": [
 		{
